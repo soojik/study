@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="81f0f55b-8328-4760-9ba5-ff5d265ba031" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BOJ.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P10451/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P10451/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P1062/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P1062/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P11724/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P11724/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P1260/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P1260/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P15565/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P15565/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P1707/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P1707/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P1713/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P1713/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2178/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2178/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2331/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2331/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2346/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2346/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2606/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2606/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2644/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2644/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2659/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2659/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2660/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2660/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2667/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2667/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2668/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2668/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2669/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2669/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2748/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P3055/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P3055/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P4963/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P4963/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P9466/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P9466/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TEST/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TEST/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TEST02/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TEST02/input.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2CA8VffPkpgBHFvipY2TKnnhYhg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/soo/Desktop/develop/BOJ",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="P4963.Main" />
+      <module name="BOJ" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="81f0f55b-8328-4760-9ba5-ff5d265ba031" name="Changes" comment="" />
+      <created>1658234055766</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658234055766</updated>
+      <workItem from="1658234057026" duration="5691000" />
+      <workItem from="1658239767056" duration="1000" />
+      <workItem from="1658326678728" duration="8731000" />
+      <workItem from="1658336023025" duration="1721000" />
+      <workItem from="1658363140996" duration="3000" />
+      <workItem from="1658370230487" duration="7031000" />
+      <workItem from="1658390320571" duration="2424000" />
+      <workItem from="1658448704885" duration="164000" />
+      <workItem from="1658532905818" duration="6901000" />
+      <workItem from="1658651525682" duration="6168000" />
+      <workItem from="1658657716839" duration="5508000" />
+      <workItem from="1658708656429" duration="9000" />
+      <workItem from="1659411813718" duration="9967000" />
+      <workItem from="1659517521029" duration="2429000" />
+      <workItem from="1659709972527" duration="598000" />
+      <workItem from="1660135925839" duration="6943000" />
+      <workItem from="1660282986154" duration="3368000" />
+      <workItem from="1660286369374" duration="5189000" />
+      <workItem from="1660367400692" duration="2109000" />
+      <workItem from="1660699388053" duration="5697000" />
+      <workItem from="1660801380572" duration="9229000" />
+      <workItem from="1661353828270" duration="154000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

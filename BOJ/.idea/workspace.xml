@@ -5,57 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81f0f55b-8328-4760-9ba5-ff5d265ba031" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BOJ.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P10451/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P10451/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P1062/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P1062/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P11724/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P11724/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P1260/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P1260/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P15565/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P15565/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P1707/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P1707/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P1713/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P1713/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2178/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2178/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2331/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2331/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2346/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2346/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2606/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2606/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2644/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2644/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2659/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2659/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2660/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2660/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2667/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2667/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2668/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2668/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2669/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2669/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2748/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P3055/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P3055/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P4963/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P4963/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P9466/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P9466/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TEST/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TEST/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TEST02/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TEST02/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +22,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -82,21 +33,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/soo/Desktop/develop/BOJ",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/soo/Desktop/develop/algorithm/BOJ&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="P4963.Main" />
+      <option name="MAIN_CLASS_NAME" value="P2146.Main" />
       <module name="BOJ" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,6 +85,9 @@
       <workItem from="1660699388053" duration="5697000" />
       <workItem from="1660801380572" duration="9229000" />
       <workItem from="1661353828270" duration="154000" />
+      <workItem from="1661511607089" duration="4224000" />
+      <workItem from="1661669857885" duration="5582000" />
+      <workItem from="1661743152685" duration="2129000" />
     </task>
     <servers />
   </component>
@@ -149,5 +104,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
   </component>
 </project>

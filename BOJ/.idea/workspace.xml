@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81f0f55b-8328-4760-9ba5-ff5d265ba031" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/P7569/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P7569/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P1697/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P1697/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2468/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2468/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P5014/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P5014/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,8 +52,8 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="P7569.Main" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="P7569.Main" />
+    <configuration name="P5014.Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="P5014.Main" />
       <module name="BOJ" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -92,6 +96,8 @@
       <workItem from="1661769859975" duration="3000" />
       <workItem from="1662120790371" duration="2034000" />
       <workItem from="1662122851058" duration="1209000" />
+      <workItem from="1662188713822" duration="13000" />
+      <workItem from="1663140524753" duration="5837000" />
     </task>
     <servers />
   </component>

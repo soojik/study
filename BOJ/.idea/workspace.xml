@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81f0f55b-8328-4760-9ba5-ff5d265ba031" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/P1012/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P1012/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P1181/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P1181/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P14503/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P14503/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P1931/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2231/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2231/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2751/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2751/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2798/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P2798/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P9205/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/P9205/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P10814/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P10814/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P11047/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P11047/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2108/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/P2108/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,8 +52,8 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="P1931.Main" />
+    <configuration name="P10814.Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="P10814.Main" />
       <module name="BOJ" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -111,7 +102,10 @@
       <workItem from="1663304682963" duration="14399000" />
       <workItem from="1663319763893" duration="3262000" />
       <workItem from="1663652721112" duration="7279000" />
-      <workItem from="1664093913732" duration="2538000" />
+      <workItem from="1664093913732" duration="2620000" />
+      <workItem from="1664169829780" duration="1336000" />
+      <workItem from="1664180493298" duration="2045000" />
+      <workItem from="1664203585911" duration="2451000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BOJ/BOJ.iml" filepath="$PROJECT_DIR$/BOJ/BOJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SW202207/SW202207.iml" filepath="$PROJECT_DIR$/SW202207/SW202207.iml" />
+      <module fileurl="file://$PROJECT_DIR$/algo_monday/algo_monday.iml" filepath="$PROJECT_DIR$/algo_monday/algo_monday.iml" />
+      <module fileurl="file://$PROJECT_DIR$/algorithm.iml" filepath="$PROJECT_DIR$/algorithm.iml" />
+    </modules>
+  </component>
+</project>

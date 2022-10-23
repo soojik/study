@@ -1,4 +1,4 @@
-package Day2.P4;
+package Week2.P4;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

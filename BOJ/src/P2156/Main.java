@@ -28,7 +28,7 @@ public class Main {
         for (int i = 3; i <= N; i++) {
             dp[i] = Math.max(dp[i - 1], Math.max(dp[i - 3] + wine[i - 1] + wine[i], dp[i - 2] + wine[i]));
         }
-        
+
         System.out.println(dp[N]);
     }
 }

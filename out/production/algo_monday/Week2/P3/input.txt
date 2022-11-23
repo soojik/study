@@ -1,6 +1,0 @@
-5 1
-goorm 110.40
-goormee 111.50
-goormy 109.50
-oscar 100.00
-henry 200.00

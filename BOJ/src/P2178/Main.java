@@ -15,7 +15,7 @@ public class Main {
     static int[] dc = {-1, 0, 1, 0};
 
     public static void main(String[] args) throws Exception {
-        System.setIn(new FileInputStream("src/P2178/input.txt"));
+        System.setIn(new FileInputStream("BOJ/src/P2178/input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -38,9 +38,7 @@ public class Main {
     public static void bfs() {
         Queue<Info> q = new LinkedList<>();
 
-        int cnt = 0;
         q.add(new Info(1, 1));
-        cnt++;
         visit[1][1] = 1;
 
         while (!q.isEmpty()) {
@@ -57,7 +55,6 @@ public class Main {
                 if (1 <= next_r && next_r <= row && 1 <= next_c && next_c <= column) {
                     if (visit[next_r][next_c] == 0 && map[next_r][next_c] == 1) {
                         q.add(new Info(next_r, next_c));
-                        cnt++;
                         visit[next_r][next_c] = visit[temp.r][temp.c] + 1;
                     }
                 }

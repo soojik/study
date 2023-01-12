@@ -12,7 +12,7 @@ public class Main {
     static double sum, avg;
     static int result;
     public static void main(String[] args) throws IOException {
-        System.setIn(new FileInputStream("src/Day2/P1/input.txt"));
+        System.setIn(new FileInputStream("GroomChallenge/src/Day2/P1/input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 

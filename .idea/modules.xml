@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/SW202207/SW202207.iml" filepath="$PROJECT_DIR$/SW202207/SW202207.iml" />
       <module fileurl="file://$PROJECT_DIR$/algo_monday/algo_monday.iml" filepath="$PROJECT_DIR$/algo_monday/algo_monday.iml" />
       <module fileurl="file://$PROJECT_DIR$/algorithm.iml" filepath="$PROJECT_DIR$/algorithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programmers/programmers.iml" filepath="$PROJECT_DIR$/programmers/programmers.iml" />
     </modules>
   </component>
 </project>

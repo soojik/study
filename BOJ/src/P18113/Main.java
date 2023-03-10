@@ -48,6 +48,8 @@ public class Main {
       return;
     }
 
+    // 원하는 갯수를 얻을 수 있는 최대 길이 + 1를 반환해주는 BS() 결과이기 때문에 1을 뺀 값이 answer
+    // 조사하고 싶은 길이는 1 이상 max + 1 이기 때문에 이렇게 범위 지정
     int answer = BS(1, max + 1) - 1;
     // 이분탐색 결과가 0 이라는 것은 나눌 수 있는 길이가 없다는 뜻이므로 -1 출력하도록 함
     System.out.println((answer > 0) ? answer : -1);
@@ -55,7 +57,7 @@ public class Main {
 
   // 자를 수 있는 김밥 크기의 범위 start ~ end 를 입력받아서
   // 그 사이에 적절한 크기로 나눌 수 있는지 김밥 배열 순회하며 확인하는 이분탐색 이용할 메서드
-  // upperbound 형태로 원하는 M 만큼의
+  // upperbound 형태로 cnt_piece로 확인한 김밥 조각 개수가 원하는 M 보다 작아지는 첫 순간(길이)을 반환하도록 한다.
   static int BS(int start, int end) {
 
     int mid;
@@ -74,6 +76,7 @@ public class Main {
       }
 
       // mid 크기만큼 잘라 정리한 김밥 조각의 갯수가 원하는 M보다 크거나 같다면
+      //
       if (cnt_piece >= M) {
         start = mid + 1;
       }

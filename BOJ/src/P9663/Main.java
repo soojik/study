@@ -59,14 +59,14 @@ public class Main {
 
   static boolean check_queen(int x) {
     // 주어진 행(x)을 이용해 이전 행을 검사해
-    for (int i = 0; i < y; i++) {
+    for (int i = 0; i < x; i++) {
       // 같은 열에 존재하는지 확인
-      if (queen[i] == queen[y]) {
+      if (queen[i] == queen[x]) {
         return false;
       }
 
       // 현재 열보다 이전의 퀸의 대각선에 위치하는지 확인
-      else if ((Math.abs(y - i) == Math.abs(queen[y] - queen[i]))) {
+      else if ((Math.abs(x - i) == Math.abs(queen[x] - queen[i]))) {
         return false;
       }
     }

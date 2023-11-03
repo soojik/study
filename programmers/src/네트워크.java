@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class 네트워크 {
 
   static boolean[][] visit;

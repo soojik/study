@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class 할인행사 {=
+public class 할인행사 {
   static HashMap<String, Integer> map = new HashMap();
 
   public static void main(String[] args) {

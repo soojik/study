@@ -2,7 +2,7 @@ import java.util.*;
 
 class Solution {
     static int stoi(String s) {return Integer.parseInt(s);}
-    public List<Integer> solution(String today, String[] terms, String[] privacies) {
+    public int[] solution(String today, String[] terms, String[] privacies) {
         List<Integer> answer = new ArrayList();
         
         /* 약관 유효기간 <= (오늘 - 시작) (이면 파기해야할 문서)
@@ -36,6 +36,6 @@ class Solution {
         }
         
         
-        return answer;
+        return answer.stream().mapToInt(integer -> integer).toArray();
     }
 }

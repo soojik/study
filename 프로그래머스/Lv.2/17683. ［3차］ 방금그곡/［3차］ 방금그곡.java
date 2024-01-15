@@ -23,24 +23,8 @@ class Solution {
         while (!pq.isEmpty()) {
             Musicinfo info = pq.poll();
             
-            // 시작점이 될 수 있는 0 ~ ((info 길이) - (변환한 m 길이))
-            for (int start=0;start<=info.notes.length() - cm.length();start++) {
-                // 만약 현재 노래에서 start 인덱스 값이 원하는 음계의 시작과 같지 않다면 탐색하지 않고
-                if (!(info.notes.charAt(start) == cm.charAt(0))) continue;
-                
-                // 만약 같다면
-                boolean isValid = true;
-                // 뒤에 완전히 같은 문자열이 오는지 확인
-                for (int i=0;i<cm.length();i++) {
-                    if (!(info.notes.charAt(i + start) == cm.charAt(i))) {
-                        isValid = false;
-                        break;
-                    }
-                }
-                
-                // 모두 같다고 판명되면 바로 이름 반환
-                if (isValid) return info.name;
-            }
+            if (info.notes.contains(cm)) return info.name;
+            
         }
         
         return answer;

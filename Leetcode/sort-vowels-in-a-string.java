@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class sort-vowels-in-a-string {
   public String sortVowels(String s) {
     StringBuilder sb =new StringBuilder();
     String vowels = "AEIOUaeiou";

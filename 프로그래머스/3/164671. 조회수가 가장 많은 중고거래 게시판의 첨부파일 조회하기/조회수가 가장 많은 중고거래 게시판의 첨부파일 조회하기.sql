@@ -1,0 +1,14 @@
+WITH HighestViewBoard AS (
+    SELECT BOARD_ID
+    FROM USED_GOODS_BOARD
+    ORDER BY VIEWS DESC
+    LIMIT 1
+)
+-- 조회수가 가장 높은 중고거래 게시물에 대한 첨부파일 경로
+-- /home/grep/src/{BOARD_ID}/{FILE_ID}{FILE_NAME}{FILE_EXT}
+SELECT CONCAT('/home/grep/src/', UGF.BOARD_ID, '/', UGF.FILE_ID, UGF.FILE_NAME, UGF.FILE_EXT) AS FILE_PATH
+FROM HighestViewBoard HVB, USED_GOODS_FILE UGF
+WHERE UGF.BOARD_ID = HVB.BOARD_ID
+-- FILE ID를 기준으로 내림차순 정렬
+ORDER BY UGF.FILE_ID DESC
+;

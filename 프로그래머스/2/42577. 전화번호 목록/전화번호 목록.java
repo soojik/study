@@ -12,7 +12,7 @@ class Solution {
             // 접두어가 있는지 확인할 대상: phone_book[i]
             // 만약 접두어가 비교대상보다 길거나, 접두어로 들어가지 않는다면
             if (phone_book[i].length() < phone_book[idx].length() || 
-                !phone_book[i].substring(0, phone_book[idx].length()).equals(phone_book[idx])) {
+                !phone_book[i].startsWith(phone_book[idx])) {
                 // 다음 접두어로 현재 단어(비교대상)를 지정 
                 idx = i;
                 continue;

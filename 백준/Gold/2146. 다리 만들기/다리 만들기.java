@@ -1,105 +1,98 @@
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.StringTokenizer;
+import java.util.*;
+import java.io.*;
 
-public class Main {
-    static int N;
-    static int[][] map;
-    static boolean[][] check;
-    static int[] dr = {0, -1, 0, 1};
-    static int[] dc = {-1, 0, 1, 0};
-    static int min = Integer.MAX_VALUE;
+public class Main{
+    static int n;
+    static int[][] land;
+    static boolean[][] visited;
+    static int[] dx = {0, 0, -1, 1};
+    static int[] dy = {-1, 1, 0, 0};
+    static Queue<int[]> q = new LinkedList<>();
+    static int tmp = Integer.MAX_VALUE;// 섬별로 결과 비교
+    public static void dfs(int x, int y, int id) {
+        visited[x][y] = true;
+        land[x][y] = id;
+        for(int i = 0; i < 4; i++) {
+            int nx = x + dx[i];
+            int ny = y + dy[i];
 
-    public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        N = Integer.parseInt(br.readLine());
-        map = new int[N][N];
-
-        for (int i = 0; i < N; i++) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < N; j++) {
-                map[i][j] = Integer.parseInt(st.nextToken());
-            }
-        }
-
-        check = new boolean[N][N];
-        int cnt = 0;
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                if (!check[i][j] && map[i][j] == 1) {
-                    dfs_num(i, j, ++cnt);
-                }
-            }
-        }
-
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                if (map[i][j] >= 1) {
-                    check = new boolean[N][N];
-                    bfs(i, j);
-                }
-            }
-        }
-
-        System.out.println(min);
-    }
-
-    public static void dfs_num(int x, int y, int cnt) {
-        check[x][y] = true;
-        map[x][y] = cnt;
-
-        for (int i = 0; i < 4; i++) {
-            int nx = x + dr[i];
-            int ny = y + dc[i];
-
-            if (0 <= nx && nx < N && 0 <= ny && ny < N) {
-                if (map[nx][ny] == 1 && !check[nx][ny]) {
-                    dfs_num(nx, ny, cnt);
-                }
+            if(nx >= 0 && nx < n && ny >= 0 && ny < n && !visited[nx][ny] && land[nx][ny] == 1) {
+                dfs(nx, ny, id);
             }
         }
     }
 
-    public static void bfs(int x, int y) {
-        Queue<Info> q = new LinkedList<>();
-        q.add(new Info(x, y, 0));
-        check[x][y] = true;
+    public static void bfs(int id) {
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                if(land[i][j] == id) {
+                    q.offer(new int[] {i,j, id, 0});
+                    visited[i][j] = true;
+                }
+            }
+        }
 
-        int land = map[x][y];
-        while (!q.isEmpty()) {
-            Info curr = q.poll();
-            for (int i = 0; i < 4; i++) {
-                int nx = curr.x + dr[i];
-                int ny = curr.y + dc[i];
+        while(!q.isEmpty()) {
+            int[] t = q.poll();
+            int x = t[0];
+            int y = t[1];
+            int islandId = t[2];
+            int depth = t[3];
 
-                if (0 <= nx && nx < N && 0 <= ny && ny < N) {
-                    if (map[nx][ny] != land && !check[nx][ny]) {
-                        if (map[nx][ny] == 0) {
-                            q.add(new Info(nx, ny, curr.cnt+1));
-                            check[nx][ny] = true;
-                        }
-                        else {
-                            min = Math.min(min, curr.cnt);
-                        }
+            for(int i = 0; i < 4; i++) {
+                int nx = x + dx[i];
+                int ny = y + dy[i];
+                if(nx >= 0 && nx < n && ny >= 0 && ny < n && !visited[nx][ny]) {
+                    if(land[nx][ny] == 0) {
+                        visited[nx][ny] = true;
+                        q.offer(new int[] {nx, ny, islandId, depth + 1});
+                    }
+
+                    // 다른 섬을 방문했다면 거리 출력
+                    if(land[nx][ny] > islandId) {
+                        tmp = Math.min(tmp, depth);
                     }
                 }
+
+
             }
         }
     }
-}
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        n = Integer.parseInt(br.readLine());
 
-class Info {
-    int x;
-    int y;
-    int cnt;
+        land = new int[n][n];
 
-    public Info (int x, int y, int cnt) {
-        this.x = x;
-        this.y = y;
-        this.cnt = cnt;
+        // 섬 생성
+        for(int i = 0; i < n; i++) {
+            st = new StringTokenizer(br.readLine(), " ");
+            for(int j = 0; j < n; j++) {
+                land[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
+
+
+        // 섬에 아이디를 부여하자! (dfs)
+        visited = new boolean[n][n];
+        int id = 1;
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                if(!visited[i][j] && land[i][j] == 1) {
+                    dfs(i, j, id);
+                    id++;
+                }
+            }
+        }
+
+        // 이제 섬아이디 별로 섬 간의 거리를 알아보자!
+        for(int i = 1; i <= id; i++) {
+            visited = new boolean[n][n];
+            bfs(i);
+        }
+
+        System.out.println(tmp);
+
     }
 }

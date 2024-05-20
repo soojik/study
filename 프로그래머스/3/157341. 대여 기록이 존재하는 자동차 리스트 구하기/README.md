@@ -1,6 +1,6 @@
 # [level 3] 대여 기록이 존재하는 자동차 리스트 구하기 - 157341 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/157341) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/157341?language=oracle) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@ Empty
 
 ### 제출 일자
 
-2024년 04월 17일 10:30:44
+2024년 05월 20일 09:09:10
 
 ### 문제 설명
 

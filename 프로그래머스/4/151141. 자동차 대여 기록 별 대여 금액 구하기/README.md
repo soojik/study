@@ -1,6 +1,6 @@
 # [level 4] 자동차 대여 기록 별 대여 금액 구하기 - 151141 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/151141) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/151141?language=oracle) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@ Empty
 
 ### 제출 일자
 
-2024년 05월 03일 10:35:05
+2024년 05월 21일 16:26:12
 
 ### 문제 설명
 

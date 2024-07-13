@@ -2,29 +2,37 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] progresses, int[] speeds) {
-        Queue<Integer> leftTime = new LinkedList();
+        List<Integer> answer_list = new ArrayList();
         
-        for (int i=0;i<progresses.length;i++) {
-            int leftPer = 100 - progresses[i];
-            // 나눠서 소수점이 나온다면 하루 더 걸린다는 뜻
-            leftTime.add(leftPer % speeds[i] == 0 ? leftPer / speeds[i] : leftPer / speeds[i] + 1);
-        }
+        int day = 0;
+        int len = speeds.length;
+        Queue<int[]> q = new LinkedList();
         
-        List<Integer> ans = new ArrayList();
-        
-        while (!leftTime.isEmpty()) {
-            int max_leftTime = leftTime.peek();
+        for (int i=0;i<len;i++) q.add(new int[]{progresses[i], speeds[i]});
+        while (!q.isEmpty()) {
+            ++day;
+            
             int cnt = 0;
-            while (!leftTime.isEmpty() && leftTime.peek() <= max_leftTime) {
-                ++cnt;
-                leftTime.poll();
+            
+            // 개발 완료된 기능 다 빼기
+            while (!q.isEmpty()) {
+                int[] func = q.peek();
+                if (100 <= func[0] + func[1] * day) {
+                    ++cnt;
+                    q.poll();
+                    continue;
+                }
+                break;
             }
             
-            ans.add(cnt);
+            if (0 < cnt) answer_list.add(cnt);
         }
         
-        int[] answer = new int[ans.size()];
-        for (int i=0;i<ans.size();i++) answer[i] = ans.get(i);
+        int[] answer = new int[answer_list.size()];
+        
+        int idx = 0;
+        // List -> array
+        for (int a : answer_list) answer[idx++] = a;
         
         return answer;
     }

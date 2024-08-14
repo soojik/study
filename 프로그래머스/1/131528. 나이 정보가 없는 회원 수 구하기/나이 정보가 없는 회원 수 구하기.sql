@@ -1,5 +1,5 @@
--- 코드를 입력하세요
+-- 나이 정보가 없는 회원이 몇 명인지 출력
 SELECT COUNT(*) AS USERS
-    FROM USER_INFO
-        WHERE AGE is NULL;
-# 나이 정보 없는 회원 수 출력
+FROM USER_INFO
+WHERE AGE IS NULL
+;

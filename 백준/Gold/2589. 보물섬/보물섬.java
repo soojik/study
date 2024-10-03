@@ -7,67 +7,69 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Main {
-    static int[] dr = {-1, 0, 1, 0};
-    static int[] dc = {0, 1, 0, -1};
-    static boolean[][] visit;
-    static boolean[][] isLand;
-    static int r_len, c_len;
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+  static int[] dr = {-1, 0, 1, 0};
+  static int[] dc = {0, 1, 0, -1};
 
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        r_len = Integer.parseInt(st.nextToken());
-        c_len = Integer.parseInt(st.nextToken());
-        
-        isLand = new boolean[r_len][c_len];
-        for (int i = 0; i < r_len; i++) {
-            String line = br.readLine();
-            for (int j = 0; j < c_len; j++) {
-                isLand[i][j] = line.charAt(j) == 'L';
-            }
-        }
+  static int N, M;
+  static char[][] map;
+  static boolean[][] visited;
+  static int answer = 0;
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int max = 0;
-        for (int i = 0; i < r_len; i++) {
-            for (int j = 0; j < c_len; j++) {
-                if (isLand[i][j]) {
-                    visit = new boolean[r_len][c_len];
-                    max = Math.max(max, bfs(i, j));
+    StringTokenizer st = new StringTokenizer(br.readLine());
+    N = Integer.parseInt(st.nextToken());
+    M = Integer.parseInt(st.nextToken());
 
-                }
-            }
-        }
-
-        System.out.println(max);
+    map = new char[N][M];
+    for (int i = 0; i < N; i++) {
+      String input_str = br.readLine();
+      for (int j = 0; j < M; j++) {
+        map[i][j] = input_str.charAt(j);
+      }
     }
 
-    static int bfs(int start_r, int start_c) {
-        int max = 0;
-        Queue<int[]> q = new LinkedList<>();
-        q.add(new int[]{start_r, start_c, 0});
-        visit[start_r][start_c] = true;
-
-        while (!q.isEmpty()) {
-            int[] curr = q.poll();
-
-            int curr_r = curr[0];
-            int curr_c = curr[1];
-            int curr_cnt = curr[2];
-
-            max = Math.max(curr_cnt, max);
-
-            for (int i = 0; i < 4; i++) {
-                int nr = curr_r + dr[i];
-                int nc = curr_c + dc[i];
-                if (0 <= nr && nr < r_len && 0 <= nc && nc < c_len) {
-                    if (isLand[nr][nc] && !visit[nr][nc]) {
-                        visit[nr][nc] = true;
-                        q.add(new int[]{nr, nc, curr_cnt + 1});
-                    }
-                }
-            }
+    for (int i = 0; i < N; i++) {
+      for (int j = 0; j < M; j++) {
+        if (map[i][j] == 'L') {
+          bfs(i, j);
         }
-
-        return max;
+      }
     }
+
+    System.out.println(answer);
+  }
+
+  static void bfs(int r, int c) {
+    Queue<Info> q = new LinkedList<>();
+    q.add(new Info(r, c, 0));
+    visited = new boolean[N][M];
+    visited[r][c] = true;
+
+    while (!q.isEmpty()) {
+      Info curr = q.poll();
+      answer = Math.max(answer, curr.depth);
+      int nr, nc;
+      for (int i = 0; i < 4; i++) {
+        nr = curr.r + dr[i];
+        nc = curr.c + dc[i];
+
+        if (0 <= nr && nr < N && 0 <= nc && nc < M) {
+          if (visited[nr][nc] || map[nr][nc] == 'W') continue;
+          visited[nr][nc] = true;
+          q.add(new Info(nr, nc, curr.depth + 1));
+        }
+      }
+    }
+  }
+}
+
+class Info {
+  int r, c, depth;
+
+  public Info(int r, int c, int depth) {
+    this.r = r;
+    this.c = c;
+    this.depth = depth;
+  }
 }

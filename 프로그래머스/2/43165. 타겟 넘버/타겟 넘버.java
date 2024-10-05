@@ -9,14 +9,13 @@ class Solution {
         return answer;
     }
     
-    void dfs(int depth, int sum, int[] numbers, int target) {
-        // System.out.println("depth: " + depth + ", sum: " + sum);
-        if (depth == numbers.length) {
+    void dfs(int idx, int sum, int[] numbers, int target) {
+        if (idx == numbers.length) {
             if (sum == target) ++answer;
             return;
         }
         
-        dfs(depth + 1, sum + numbers[depth], numbers, target);
-        dfs(depth + 1, sum - numbers[depth], numbers, target);
+        dfs(idx+1, sum+numbers[idx], numbers, target);
+        dfs(idx+1, sum-numbers[idx], numbers, target);
     }
 }

@@ -2,110 +2,81 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.StringTokenizer;
 
 public class Main {
   static int N, E;
-  static List<Node>[] graph;
-  static int v1, v2;
+  static List<List<int[]>> graph = new ArrayList<>();
+  static PriorityQueue<int[]> pq = new PriorityQueue<>((int[] arr1, int[] arr2) -> arr1[1] - arr2[1]);
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     StringTokenizer st = new StringTokenizer(br.readLine());
-
+    // 1 -> N
+    // 중복 이동 가능
     N = Integer.parseInt(st.nextToken());
     E = Integer.parseInt(st.nextToken());
 
-    graph = new List[N + 1];
-
-    for (int i = 0; i <= N; i++) graph[i] = new ArrayList<>();
+    for (int i = 0; i <= N; i++) {
+      graph.add(new ArrayList<>());
+    }
 
     for (int i = 0; i < E; i++) {
       st = new StringTokenizer(br.readLine());
-      int a = Integer.parseInt(st.nextToken());
-      int b = Integer.parseInt(st.nextToken());
-      int c = Integer.parseInt(st.nextToken());
+      int u = Integer.parseInt(st.nextToken());
+      int v = Integer.parseInt(st.nextToken());
+      int w = Integer.parseInt(st.nextToken());
 
-      graph[a].add(new Node(b, c));
-      graph[b].add(new Node(a, c));
+      graph.get(u).add(new int[]{v, w});
+      graph.get(v).add(new int[]{u, w});
     }
 
     st = new StringTokenizer(br.readLine());
-    v1 = Integer.parseInt(st.nextToken());
-    v2 = Integer.parseInt(st.nextToken());
+    int V1 = Integer.parseInt(st.nextToken());
+    int V2 = Integer.parseInt(st.nextToken());
 
-    int[] result = new int[6];
-    result[0] = Dijkstra(1, v1);
-    result[1] = Dijkstra(v1, v2);
-    result[2] = Dijkstra(v2, N);
-    result[3] = Dijkstra(1, v2);
-    result[4] = Dijkstra(v2, v1);
-    result[5] = Dijkstra(v1, N);
+    int dist1 = dijkstra(1, V1);
+    int dist2 = dijkstra(V2, N);
+    int dist3 = dijkstra(V1, V2);
+    int dist4 = dijkstra(1, V2);
+    int dist5 = dijkstra(V1, N);
+    int dist6 = dijkstra(V2, V1);
 
-    long min1 = 0;
-    for (int i = 0; i < 3; i++) {
-      if (result[i] == Integer.MAX_VALUE) {
-        min1 = Integer.MAX_VALUE;
-        break;
-      }
-      min1 += result[i];
+    int answer = Integer.MAX_VALUE;
+    if (dist1 != Integer.MAX_VALUE && dist2 != Integer.MAX_VALUE && dist3 != Integer.MAX_VALUE) {
+      answer = dist1 + dist2 + dist3;
+    }
+    if (dist4 != Integer.MAX_VALUE && dist5 != Integer.MAX_VALUE && dist6 != Integer.MAX_VALUE) {
+      answer = Math.min(answer, dist4 + dist5 + dist6);
     }
 
-    long min2 = 0;
-    for (int i = 3; i < 6; i++) {
-      if (result[i] == Integer.MAX_VALUE) {
-        min2 = Integer.MAX_VALUE;
-        break;
-      }
-      min2 += result[i];
-    }
-
-    long ans = Math.min(min1, min2);
-    System.out.println(Integer.MAX_VALUE <= ans ? -1 : ans);
+    System.out.println(answer == Integer.MAX_VALUE ? -1 : answer);
   }
 
-  static int Dijkstra(int start, int end) {
-    int[] min_dist = new int[N + 1];
-    Arrays.fill(min_dist, Integer.MAX_VALUE);
-
-    PriorityQueue<Node> pq = new PriorityQueue<>();
-
-    pq.add(new Node(start, 0)); // 시작점 1
-    min_dist[start] = 0;
+  static int dijkstra(int start, int end) {
+    int[] dist = new int[N + 1];
+    Arrays.fill(dist, Integer.MAX_VALUE);
+    boolean[] visited = new boolean[N + 1];
+    pq.add(new int[]{start, 0});
+    dist[start] = 0;
 
     while (!pq.isEmpty()) {
-      Node cur = pq.poll();
-      for (Node next : graph[cur.getIdx()]) {
-        if (min_dist[cur.getIdx()] + next.getCost() <= min_dist[next.getIdx()]) {
-          min_dist[next.getIdx()] = min_dist[cur.getIdx()] + next.getCost();
+      int[] curr = pq.poll();
+      visited[curr[0]] = true;
 
-          pq.add(new Node(next.getIdx(), min_dist[next.getIdx()]));
+      for (int[] next : graph.get(curr[0])) {
+        if (visited[next[0]]) continue;
+        if (dist[curr[0]] + next[1] < dist[next[0]]) {
+          dist[next[0]] = dist[curr[0]] + next[1];
+          pq.add(new int[]{next[0], dist[next[0]]});
         }
       }
     }
-    return min_dist[end];
-  }
-}
 
-class Node implements Comparable<Node> {
-  private int idx;
-  private int cost;
-
-  public Node(int idx, int cost) {
-    this.idx = idx;
-    this.cost = cost;
-  }
-
-  public int getIdx() {
-    return idx;
-  }
-
-  public int getCost() {
-    return cost;
-  }
-
-  @Override
-  public int compareTo(Node o) {
-    return this.cost - o.cost;
+    return dist[end];
   }
 }

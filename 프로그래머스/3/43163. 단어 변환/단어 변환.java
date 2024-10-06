@@ -1,52 +1,52 @@
 import java.util.*;
 
 class Solution {
-    int len;
-    int word_len;
-    int answer = Integer.MAX_VALUE;
+    int answer = 0;
     public int solution(String begin, String target, String[] words) {
-        len = words.length;
-        word_len = words[0].length();
         
-        int idx = 0;
-        for (String w : words) {
-            if (valid(w, begin)) {
-                bfs(idx, target, words);
-            }
-            ++idx;
-        }
-        if (answer == Integer.MAX_VALUE) return 0;
-        return answer + 1;
+        bfs(begin, target, words);
+        
+        return answer;
     }
     
-    void bfs(int start_idx, String target, String[] words) {
-        Queue<int[]> q = new LinkedList();
+    void bfs(String begin, String target, String[] words) {
+        Queue<Word> q = new LinkedList();
+        int len = words.length;
         boolean[] visited = new boolean[len];
-        
-        q.add(new int[]{start_idx, 0});
-        visited[start_idx] = true;
+        q.add(new Word(begin, 0));
         
         while (!q.isEmpty()) {
-            int[] curr = q.poll();
+            Word curr = q.poll();
             
-            if (words[curr[0]].equals(target)) {
-                answer = Math.min(answer, curr[1]);
+            if (curr.word.equals(target)) {
+                answer = curr.depth;
+                return;
             }
             
             for (int i=0;i<len;i++) {
-                if (visited[i] || !valid(words[curr[0]], words[i])) continue;
+                if (visited[i] || !check(curr.word, words[i])) continue;
                 visited[i] = true;
-                q.add(new int[]{i, curr[1] + 1});
+                q.add(new Word(words[i], curr.depth + 1));
             }
         }
     }
     
-    boolean valid(String word1, String word2) {
-        int cnt = 0;
-        for (int i=0; i<word_len; i++) {
-            if (word1.charAt(i) != word2.charAt(i)) ++cnt;
+    boolean check(String str1, String str2) {
+        int len = str1.length();
+        int diff = 0;
+        for (int i=0;i<len;i++) {
+            if (str1.charAt(i) != str2.charAt(i)) ++diff;
         }
-        
-        return cnt == 1;
+        return diff == 1;
+    }
+}
+
+class Word {
+    String word;
+    int depth;
+    
+    public Word(String word, int depth) {
+        this.word = word;
+        this.depth = depth;
     }
 }

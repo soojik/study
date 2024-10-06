@@ -1,21 +1,25 @@
 class Solution {
-    int answer = 0;
     int len;
+    boolean[] visited;
+    int answer = -1;
     public int solution(int k, int[][] dungeons) {
-        len = dungeons.length;
         
-        탐험(0, k, dungeons, new boolean[len]);
+        len = dungeons.length;
+        visited = new boolean[len];
+        
+        dfs(k, dungeons, 0);
         
         return answer;
     }
     
-    public void 탐험(int depth, int 피로도, int[][] d, boolean[] visited) {
+    void dfs(int k, int[][] dungeons, int depth) {
+        
         answer = Math.max(answer, depth);
         
         for (int i=0;i<len;i++) {
-            if (visited[i] || 피로도 < d[i][0]) continue;
+            if (visited[i] || k < dungeons[i][0]) continue;
             visited[i] = true;
-            탐험(depth + 1, 피로도 - d[i][1], d, visited);
+            dfs(k - dungeons[i][1], dungeons, depth + 1);
             visited[i] = false;
         }
     }

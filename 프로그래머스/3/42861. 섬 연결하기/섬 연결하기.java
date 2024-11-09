@@ -1,51 +1,42 @@
 import java.util.*;
 
 class Solution {
-    PriorityQueue<int[]> pq;
-    int[] parents;
+    List<List<int[]>> graph = new ArrayList();
+    int answer = Integer.MAX_VALUE;
     public int solution(int n, int[][] costs) {
-        // {섬1, 섬2, 비용}
-        int answer = 0;
-        Arrays.sort(costs, (i1, i2) -> i1[2] - i2[2]);
         
-        parents = new int[n];
-        for (int i = 0; i < n; i++) {
-            parents[i] = i;
-        }
-        
-        pq = new PriorityQueue<>((i1, i2) -> i1[2] - i2[2]);
+        for (int i=0;i<=n;i++) graph.add(new ArrayList<int[]>());
         
         for (int[] c : costs) {
-            pq.add(c);
+            graph.get(c[0]).add(new int[]{c[1], c[2]});
+            graph.get(c[1]).add(new int[]{c[0], c[2]});
         }
         
-        while(!pq.isEmpty()) {
-            
+        return 최단거리(n);
+    }
+    
+    int 최단거리(int n) {
+        Queue<int[]> pq = new PriorityQueue<int[]>((a, b) -> a[1] - b[1]);
+        boolean[] visited = new boolean[n];
+        pq.add(new int[]{0, 0});
+        
+        int cnt = 0;
+        int sum = 0;
+        while (!pq.isEmpty()) {
             int[] curr = pq.poll();
             
-            if (!isConnected(curr[0], curr[1])) {
-                answer += curr[2];
-                unionParent(curr[0], curr[1]);
+            if (visited[curr[0]]) continue;
+            
+            visited[curr[0]] = true;
+            ++cnt;
+            sum += curr[1];
+            
+            for (int[] next : graph.get(curr[0])) {
+                if (visited[next[0]]) continue;
+                pq.add(next);
             }
         }
         
-        return answer;
-    }
-    
-    int getParent(int n) {
-        if (parents[n] == n) return n;
-        return parents[n] = getParent(parents[n]);
-    }
-    
-    boolean isConnected(int n1, int n2) {
-        return getParent(n1) == getParent(n2);
-    }
-    
-    void unionParent(int n1, int n2) {
-        n1 = getParent(n1);
-        n2 = getParent(n2);
-        
-        if (n1 < n2) parents[n2] = n1;
-        else parents[n1] = n2;
+        return sum;
     }
 }

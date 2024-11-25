@@ -1,64 +1,64 @@
+import java.util.*;
+
 class Solution {
+    int[] ryan = new int[11];
     int[] answer = new int[11];
-    int max = 0;
+    int diff = 0;
     public int[] solution(int n, int[] info) {
-        comb(info, new int[11], 0, n);
-        if (max == 0) return new int[]{-1};
+        
+        func(0, n, info);
+        if (diff == 0) return new int[]{-1};
         
         return answer;
     }
     
-    // 전보다 더 낮은 점수를 많이 갖는지
-    public boolean isBetterThanLast(int[] last, int[] curr) {
+    // 점수차
+    int get_diff(int[] apeach) {
+        int a_cnt = 0, r_cnt = 0;
+        for (int i=0;i<=10;i++) {
+            if (ryan[i] <= apeach[i]) {
+                if (apeach[i] == 0) continue;
+                a_cnt += (10 - i);
+                continue;
+            }
+            r_cnt += (10 - i);
+        }
+        
+        return r_cnt - a_cnt;
+    }
+    
+    // ryan이 answer보다 더 낮은 점수 많은지
+    boolean is_more_qualified() {
         for (int i=10;i>=0;i--) {
-            if (last[i] < curr[i]) return true;
-            else if (curr[i] < last[i]) return false;
+            if (ryan[i] < answer[i]) return false;
+            else if (ryan[i] > answer[i]) return true;
         }
         return false;
     }
     
-    public void setAnswer(int[] rinfo) {
-        for (int i=0;i<=10;i++) answer[i] = rinfo[i];
-    }
-    
-    // 점수차 구하는 메서드
-    public int getScoreDiff(int[] ainfo, int[] rinfo) {
-        int diff = 0;
-        for (int i=0;i<=10;i++) {
-            if (ainfo[i] < rinfo[i]) diff += (10 - i);
-            else if (rinfo[i] < ainfo[i]) diff += (i - 10);
-        }
-        
-        return diff;
-    }
-    
-    public void comb(int[] ainfo, int[] rinfo, int idx, int depth) {
-        // 쏠 화살이 없거나 모든 과녁을 돌았다면 
-        if (depth == 0 || idx == 11) {
-            rinfo[10] = depth;
-            // 큰 점수차?
-            int diff = getScoreDiff(ainfo, rinfo);
-            if (max < diff) {
-                max = diff;
-                setAnswer(rinfo);
+    void func(int target, int left_arrows, int[] apeach) {
+        if (target == 11 || left_arrows == 0) {
+            ryan[10] = left_arrows;
+            int curr_diff = get_diff(apeach);
+            if (diff < curr_diff) {
+                for (int i=0;i<=10;i++) answer[i] = ryan[i];
+                diff = curr_diff;
             }
-            // 같은 점수이면서 전 점수보다 낮은 점수가 많다면
-            else if (max == diff && isBetterThanLast(answer, rinfo)) {
-                // 업데이트
-                setAnswer(rinfo);
+            // 낮은 점수가 더 많을 경우, answer 업데이트
+            else if (diff == curr_diff && is_more_qualified()) {
+                for (int i=0;i<=10;i++) answer[i] = ryan[i];
             }
             return;
         }
         
-        // 현 과녁에는 아무것도 안쏘고 넘어감
-        comb(ainfo, rinfo, idx+1, depth);
-        // 현 과녁에 어피치보다 한발 더 쏨
-        // 그러려면 info[idx] 보다 화살(depth)이 많아야만
-        if (ainfo[idx] < depth) {
-            rinfo[idx] = ainfo[idx] + 1;
-            comb(ainfo, rinfo, idx+1, depth - rinfo[idx]);
-            // 다음 탐색을 위해 원상태로 복귀
-            rinfo[idx] = 0;
+        // target 점수에서 아예 안맞출경우
+        func(target + 1, left_arrows, apeach);
+        
+        // 맞출 경우
+        if (apeach[target] < left_arrows) {
+            ryan[target] = apeach[target] + 1;
+            func(target + 1, left_arrows - ryan[target], apeach);
+            ryan[target] = 0;
         }
     }
 }

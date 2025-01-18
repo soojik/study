@@ -1,36 +1,35 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
   static int N, C;
-  static int[] dist;
+  static int[] routers;
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     StringTokenizer st = new StringTokenizer(br.readLine());
-
     N = Integer.parseInt(st.nextToken());
     C = Integer.parseInt(st.nextToken());
 
-    dist = new int[N];
+    routers = new int[N];
+
     for (int i = 0; i < N; i++) {
-      dist[i] = Integer.parseInt(br.readLine());
+      routers[i] = Integer.parseInt(br.readLine());
     }
 
-    Arrays.sort(dist);
+    Arrays.sort(routers);
 
-    System.out.println(bs());
-  }
+    int start = 0, end = routers[routers.length - 1];
+    int mid = 0;
 
-  static int bs() {
-    int start = 1;
-    int end = dist[dist.length - 1];
+    while (start <= end) {
+      mid = (start + end) / 2;
 
-    while(start <= end) {
-      int mid = (start + end) / 2;
-
-      if (valid(mid)) {
+      if (isValid(mid)) {
         start = mid + 1;
       }
       else {
@@ -38,19 +37,23 @@ public class Main {
       }
     }
 
-    return end;
+    System.out.println(start - 1);
+//    System.out.println(end);
+//    System.out.println(mid);
   }
 
-  static boolean valid(int mid) {
-    int visited = 1;
+  static boolean isValid(int dist) {
+//    System.out.println("dist = " + dist);
+    int cnt = 1;
     int last_idx = 0;
-    for (int i = 0; i < dist.length; i++) {
-      if (mid <= dist[i] - dist[last_idx]) {
-        ++visited;
+    int len = routers.length;
+    for (int i = 0; i < len; i++) {
+      if (dist <= routers[i] - routers[last_idx]) {
         last_idx = i;
+        ++cnt;
       }
     }
 
-    return C <= visited;
+    return C <= cnt;
   }
 }
